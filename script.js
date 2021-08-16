@@ -12,3 +12,13 @@ const eventGetText = () => {
     const getText = document.querySelector('#currency-input').value;
     console.log(getText);
 };
+
+const fetchCurrency = () => {
+    const saveFetch = fetch('https://api.exchangerate.host/latest')
+    .then((response) => response.json())
+    .then((object) => console.log(object))
+    .catch((error) => console.log(error, "eroooooou"))
+    
+}
+
+fetchCurrency();
