@@ -16,7 +16,11 @@ const eventGetText = () => {
 const fetchCurrency = () => {
     const saveFetch = fetch('https://api.exchangerate.host/latest')
     .then((response) => response.json())
-    .then((object) => console.log(object))
+    .then((object) => {
+        const rates = object.rates;
+        const ratesEntries = Object.entries(rates)
+        console.log(ratesEntries);
+    })
     .catch((error) => console.log(error, "eroooooou"))
     
 }
